@@ -1,0 +1,126 @@
+// ファイルのインポート
+@use "variable" as v;
+@use "mixins" as m;
+@use "extends" as e;
+@use "function" as f;
+
+.about {
+    position: relative;
+    z-index: 1;
+    margin-top: 115px;
+    padding: 0 calc(15px / 375px * 100%) 70px;
+
+    @include m.mq('pc') {
+        margin-top: 60px;
+    }
+
+    &__subTitle {
+        width: 100%;
+        max-width: 300px;
+
+        @include m.mq('pc') {
+            max-width: 453px;
+        }
+    }
+
+    &__list {
+        margin-top: 20px;
+
+        @include m.mq('pc') {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            gap: calc(27.5px / 1000px * 100%);
+            max-width: 1000px;
+            max-height: 298px;
+            margin: 50px auto 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        background-color: v.$main-white;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        min-height: 92px;
+
+        @include m.mq('pc') {
+            display: block;
+            margin-top: 0;
+            min-height: initial;
+            max-width: 315px;
+            height: 100%;
+        }
+
+        &--imgBox {
+            border-radius: 10px 100px 100px 10px;
+            overflow: hidden;
+            align-self: stretch;
+            flex: 0 0 calc(121px / 345px * 100%);
+
+            @include m.mq('pc') {
+                border-radius: 10px 10px 0 0;
+                aspect-ratio: 315 / 205;
+            }
+
+            .about__img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &--txt {
+            margin: 0 calc(26px / 345px * 100%) 0 18px;
+            font-size: f.rem(14);
+
+            @include m.mq('pc') {
+                margin: 0;
+                padding: 14px 15px 24px;
+                font-size: f.rem(16);
+                text-align: center;
+            }
+        }
+
+        &--underlineTxt {
+            font-size: f.rem(18);
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+
+            @include m.mq('pc') {
+                font-size: f.rem(19);
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 10%;
+                width: 100%;
+                height: 20%;
+                background-color: v.$lightGreen;
+                z-index: -1;
+            }
+        }
+    }
+
+    &__desc {
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        margin-top: 38px;
+
+        @include m.mq('pc') {
+            font-size: f.rem(18);
+        }
+    }
+}
+
+
+.about > * {
+    position: relative;
+    z-index: 1;
+}

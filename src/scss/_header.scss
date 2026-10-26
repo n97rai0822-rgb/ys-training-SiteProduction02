@@ -1,0 +1,150 @@
+// ファイルのインポート
+@use "variable" as v;
+@use "mixins" as m;
+@use "extends" as e;
+@use "function" as f;
+
+.header {
+    background-color: v.$main-white;
+    box-shadow: 0 3px 6px #0000001a;
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+
+    @include m.mq('pc') {
+        height: 68px;
+        padding: 0 14px 0 23px;
+    }
+
+    &__logo {
+        max-width: 199px;
+        display: flex;
+        align-items: center;
+        margin-left: calc(10px / 375px * 100%);
+
+        @include m.mq('pc') {
+            max-width: 238px;
+            margin-left: 9px;
+        }
+    }
+
+    .nav {
+        display: none;
+
+        @include m.mq('pc') {
+            display: block;
+        }
+
+        &__list {
+            @extend %flex-center;
+            gap: 40px;
+            height: 100%;
+        }
+
+        &__item {
+            font-size: f.rem(15);
+            font-weight: 600;
+        }
+    }
+
+    &__right {
+        @extend %flex-center;
+
+        .header__btn--sp {
+            height: 100%;
+            padding: 11px 4px;
+            color: v.$main-white;
+            background-color: v.$cvBtn-pink;
+            font-size: f.rem(11);
+            text-align: center;
+
+            @include m.mq('pc') {
+                display: none;
+            }
+        }
+
+        &--cvBtn {
+            display: none;
+
+            @include m.mq('pc') {
+                display: flex;
+                gap: 9px;
+                width: 245px;
+                height: 49px;
+                font-size: f.rem(14);
+
+                &::after{
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+        }
+
+        .header__menu {
+            background-color: v.$title-black;
+            color: v.$main-white;
+            width: 52px;
+            height: 100%;
+            font-size: f.rem(10);
+            text-align: center;
+            cursor: pointer;
+
+            @include m.mq('pc') {
+                display: none;
+            }
+
+            &--hamburger {
+                width: 21px;
+                height: 14px;
+                margin: 12px auto 0;
+                position: relative;
+                transition: all .5s;
+
+                &.active {
+                    transform: rotate(360deg);
+
+                    .hamburger__line {
+                        &:nth-of-type(1){
+                            top: 50%;
+                            transform: translateY(-50%) rotate(-45deg);
+                        }
+
+                        &:nth-of-type(2){
+                            transform: translateY(-50%) rotate(45deg);
+                        }
+
+                        &:nth-of-type(3){
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .hamburger__line {
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: v.$main-white;
+                    position: absolute;
+                    transition: all .5s;
+
+                    &:nth-of-type(1){
+                        top: 0;
+                    }
+
+                    &:nth-of-type(2){
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    &:nth-of-type(3){
+                        bottom: 0;
+                    }
+                }
+            }
+
+            &--txt {
+                margin-top: 6px;
+            }
+        }
+    }
+}

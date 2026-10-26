@@ -1,0 +1,250 @@
+// ファイルのインポート
+@use "variable" as v;
+@use "mixins" as m;
+@use "extends" as e;
+@use "function" as f;
+
+.plan {
+    padding: 70px calc(15px / 375px * 100%) 0;
+
+    &__inner {
+        background-color: v.$main-white;
+        padding: 19px calc(15px / 375px * 100%) 15px;
+        margin:  40px auto 0;
+
+        @include m.mq('pc') {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            padding: 35px 42px;
+        }
+    }
+
+    &__contents {
+
+        .regular__price {
+            font-size: f.rem(10);
+            font-weight: 700;
+            @extend %flex-center;
+
+            @include m.mq('pc') {
+                font-size: f.rem(15);
+            }
+
+            &--txt{
+                display: block;
+                width: fit-content;
+                padding: 3px;
+                margin: 3px 9px 0 0;
+                color: v.$main-white;
+                background-color: v.$title-black;
+                border-radius: 4px;
+                font-weight: 500;
+                text-align: center;
+                line-height: 1.1;
+                letter-spacing: 0.1em;
+
+                @include m.mq('pc') {
+                    padding: 5px;
+                    margin: 5px 14px 0 0;
+                }
+            }
+
+            &--largeTxt {
+                font-size: f.rem(34);
+                position: relative;
+
+                @include m.mq('pc') {
+                    font-size: f.rem(57);
+                }
+
+                &::after,
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 110%;
+                    height: 3px;
+                    background-color: v.$cvBtn-pink;
+                    position: absolute;
+                    left: -4%;
+                }
+
+                &::before {
+                    top: 50%;
+                }
+
+                &::after {
+                    top: 60%;
+                }
+            }
+
+            &--smallTxt {
+                margin: 18px 0 0 5px;
+
+                @include m.mq('pc') {
+                    margin: 30px 0 0 5px;
+                }
+            }
+        }
+
+        .plan__arrow {
+            display: block;
+            width: 23px;
+            margin: 0 auto;
+
+            @include m.mq('pc') {
+                width: 41px;
+                height: 21px;
+            }
+        }
+
+        .special__price {
+            font-size: f.rem(11);
+            font-weight: 700;
+            text-align: center;
+            color: v.$cvBtn-pink;
+
+            @include m.mq('pc') {
+                font-size: f.rem(16);
+            }
+
+            &--yen {
+                font-size: f.rem(42);
+
+                @include m.mq('pc') {
+                    font-size: f.rem(67);
+                }
+            }
+
+            &--largeTxt {
+                font-size: f.rem(57);
+                line-height: 1;
+
+                @include m.mq('pc') {
+                    font-size: f.rem(90);
+                }
+            }
+        }
+
+        .plan__period {
+            @extend %flex-center;
+            gap: 5px;
+
+            &--txt {
+                font-size: f.rem(13);
+                font-weight: 500;
+
+                @include m.mq('pc') {
+                    font-size: f.rem(16);
+                }
+            }
+
+            &--largeTxt {
+                font-size: f.rem(16);
+                font-weight: 700;
+                margin-left: 5px;
+
+                @include m.mq('pc') {
+                    font-size: f.rem(22);
+                }
+            }
+
+            &--num {
+                font-size: f.rem(26);
+
+                @include m.mq('pc') {
+                    font-size: f.rem(35);
+                }
+            }
+
+            &--icon {
+                display: block;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background-color: v.$title-black;
+                margin-top: 15px;
+                position: relative;
+
+                @include m.mq('pc') {
+                    width: 19px;
+                    height: 19px;
+                }
+
+                &::before,
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 6px;
+                    height: 1px;
+                    background-color: v.$main-white;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%);
+
+                    @include m.mq('pc') {
+                        width: 10px;
+                        height: 2px;
+                    }
+                }
+
+                &::after {
+                    transform: translate(-50%) rotate(90deg);
+                }
+            }
+
+        }
+    }
+
+    .plan__service {
+        margin-top: 18px;
+        max-width: 498px;
+
+        &--title{
+            font-size: f.rem(18);
+            font-weight: 500;
+            text-align: center;
+            padding: 5px;
+            color: v.$main-white;
+            background-color: v.$darkGreen;
+            border-radius: 10px 10px 0 0;
+
+            @include m.mq('pc') {
+                font-size: f.rem(20);
+                padding: 7px;
+            }
+        }
+
+        &--list {
+            padding: 15px calc(15px / 375px * 100%);
+            background-color: v.$bg-lightGrey;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-radius: 0 0 10px 10px;
+
+            @include m.mq('pc') {
+                font-size: f.rem(20);
+                padding: 22px calc(36px / 498px * 100%);
+                gap: 10px;
+            }
+        }
+
+        &--item {
+            font-size: f.rem(14);
+            font-weight: 500;
+            padding: 3px 7px;
+            background-color: v.$main-white;
+            border-radius: 4px;
+
+            @include m.mq('pc') {
+                font-size: f.rem(15);
+                padding: 4px 10px;
+            }
+        }
+
+    }
+}

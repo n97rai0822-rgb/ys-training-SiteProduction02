@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB MASTERS</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="./scss/style.scss">
+  </head>
+  <body id="body">
+    <header class="header" id="header">
+      <h1 class="header__logo">
+        <a class="header__logo--link" href="#body">
+          <img src="./img/logo-black.svg" alt="WEB MASTERSのサイトロゴ">
+        </a>
+      </h1>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#feature">特徴</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#study">学習内容</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#support">サポート体制</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#use">ご利用の流れ</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#pricePlan">料金</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#body">ブログ</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__right">
+        <a class="header__btn--sp" href="#form">まずは<br>無料相談</a>
+        <a class="cvBtn header__right--cvBtn" href="#form">無料カウンセリング予約をする</a>
+        <div class="header__menu">
+          <div class="header__menu--hamburger">
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+            <span class="hamburger__line"></span>
+          </div>
+          <p class="header__menu--txt">MENU</p>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="mainVisual">
+        <div class="mainVisual__inner">
+          <div class="mainVisual__bg"></div>
+          <a class="mainVisual__campaign" href="#body">
+            <picture class="mainVisual__picture mainVisual__picture--campaign">
+              <source media="(max-width: 767px)" srcset="./img/campaign_0331_sp.webp" width="375" height="165">
+              <img class="mainVisual__campaign--img" src="./img/campaign_0331_pc.webp" alt="新しいチャレンジ応援キャンペーンのバナー" width="595" height="217">
+            </picture>
+          </a>
+          <div class="mainVisual__kvGroup">
+            <picture class="mainVisual__picture mainVisual__picture--kv">
+              <source media="(max-width: 767px)" srcset="./img/kv_sp.webp" width="375" height="300">
+              <img class="mainVisual__kv" src="./img/kv_pc.webp" alt="ノートパソコンでWebデザインを学ぶ女性" width="590" height="538">
+            </picture>
+            <img class="mainVisual__kvGroup--deco" src="./img/kv-bg_circle01.webp" alt="" width="51" height="51">
+            <img class="mainVisual__kvGroup--deco" src="./img/kv-bg_circle02.webp" alt="" width="44" height="44">
+            <img class="mainVisual__kvGroup--deco" src="./img/kv-bg_circle03.webp" alt="" width="69" height="69">
+            <img class="mainVisual__kvGroup--deco" src="./img/feature-ornament-02-2_sp.svg" alt="" width="24" height="24">
+            <span class="mainVisual__kvGroup--deco"></span>
+            <span class="mainVisual__kvGroup--deco"></span>
+            <span class="mainVisual__kvGroup--deco"></span>
+          </div>
+          <div class="mainVisual__lead">
+            <p class="lead__txt"><span class="lead__underlineTxt">現役エンジニア</span>から学ぶ!</p>
+            <p class="lead__txt"><span class="lead__underlineTxt">未経験</span>からの</p>
+            <p class="lead__txt">Webエンジニア<span class="lead__underlineTxt">転職!</span></p>
+          </div>
+        </div>
+        <a class="cvBtn mainVisual__cvBtn" href="#form">無料カウンセリング予約をする</a>
+        <div class="section about">
+          <p class="about__subTitle title__rectangle">WEBMASTERSとは？</p>
+          <ul class="about__list">
+            <li class="about__item">
+              <div class="about__item--imgBox">
+                <img class="about__img" src="./img/support-learning01_pc.webp" alt="パソコンを使ってオンライン学習に取り組む受講者" width="315" height="205">
+              </div>
+              <p class="about__item--txt">
+                <span class="about__item--underlineTxt">完全個別指導</span>で、<br class="spBr">1人1人に合った 学習プランで学べる。
+              </p>
+            </li>
+            <li class="about__item">
+              <div class="about__item--imgBox">
+                <img class="about__img" src="./img/support-learning02_pc.webp" alt="現役エンジニアからのコードレビューをもとに、パソコンでプログラミング学習に取り組む様子" width="315" height="205">
+              </div>
+              <p class="about__item--txt">
+                <span class="about__item--underlineTxt">現役のエンジニア</span>からのコードレビューで、<br class="spBr"><span class="about__item--underlineTxt">確実にスキル</span>がつく。
+              </p>
+            </li>
+            <li class="about__item">
+              <div class="about__item--imgBox">
+                <img class="about__img" src="./img/support-jobChange02_pc.webp" alt="転職サポートを受け、転職活動に取り組む受講者" width="315" height="205">
+              </div>
+              <p class="about__item--txt">
+                受講後も安心の、充実した<br class="spBr"><span class="about__item--underlineTxt">転職サポート</span>で<br class="spBr"><span class="about__item--underlineTxt">憧れの働き方</span>へ
+              </p>
+            </li>
+          </ul>
+          <p class="about__desc">現役エンジニア監修のカリキュラムと、<br> 挫折しにくい環境でWebエンジニアとしての転職を目指せるスクールです。</p>
+        </div>
+      </section>
+      <section class="section plan" id="plan">
+        <h2 class="section__title plan__title">プラン</h2>
+          <div class="plan__inner">
+            <div class="plan__contents">
+              <p class="regular__price">
+                <span class="regular__price--txt">通常<br>価格</span>
+                <span class="regular__price--largeTxt">¥120,000</span>
+                <span class="regular__price--smallTxt">(税込)</span>
+              </p>
+              <svg class="plan__arrow" xmlns="http://www.w3.org/2000/svg" width="30" height="17" viewBox="0 0 30 17"><path d="M15.75 16.15a1 1 0 01-1.5 0L1.466 1.662A1 1 0 012.216 0h25.568a1 1 0 01.75 1.662z" fill="#FFA0B6"/></svg>
+              <p class="special__price">
+                <span class="special__price--yen">¥</span>
+                <span class="special__price--largeTxt">99,800</span>(税込)
+              </p>
+              <div class="plan__period">
+                <p class="plan__period--txt">学習期間
+                  <span class="plan__period--largeTxt"><span class="plan__period--num">4</span>ヶ月</span>
+                </p>
+                <span class="plan__period--icon"></span>
+                <p class="plan__period--txt">転職支援期間<span class="plan__period--largeTxt"><span class="plan__period--num">6</span>ヶ月</span></p>
+              </div>
+            </div>
+            <div class="plan__service">
+              <h3 class="plan__service--title">サービス内容</h3>
+                <ul class="plan__service--list">
+                  <li class="plan__service--item">Web制作の基礎カリキュラム</li>
+                  <li class="plan__service--item">最大26回のオンラインコードレビュー</li>
+                  <li class="plan__service--item">開発環境の構築サポート</li>
+                  <li class="plan__service--item">Webアプリ開発のカリキュラム</li>
+                  <li class="plan__service--item">履歴書</li>
+                  <li class="plan__service--item">職務経歴書の作成サポート</li>
+                  <li class="plan__service--item">面談対策</li>
+                  <li class="plan__service--item">転職先の紹介</li>
+                </ul>
+            </div>
+          </div>
+      </section>
+      <section class="section feature" id="feature">
+        <h2 class="section__title feature__title">特徴</h2>
+        <p class="feature__desc">WEBMASTERSでは学習から転職支援まで充実したサポートを提供し、 <br>挫折しづらい環境を整備しています。</p>
+        <ul class="feature__list">
+          <li class="feature__item">
+            <h3 class="feature__title">充実した学習サポート</h3>
+            <div class="feature__img">
+              <img class="feature__img--main" src="./img/feature-img01.webp" alt="学習サポートを受けて、パソコンで学習に取り組む受講者" width="121" height="135">
+              <img class="feature__img--ornament ornament01" src="./img/feature-ornament-01.svg" alt="">
+            </div>
+            <div class="feature__txtGroup">
+              <p class="feature__txtGroup--txt">取り組んだ課題について週に一回オンライン会議でコードレビューを行うため、より効率的に高い技術を身につけることができます。 <br>また学習の進捗をWebアプリで管理するため、進度を把握しやすくモチベーションを保って学習に取り組むことができます。</p>
+              <p class="feature__txtGroup--period">質問受付時間：10:00〜22:00（平日月曜日〜金曜日）</p>
+            </div>
+          </li>
+          <li class="feature__item">
+            <h3 class="feature__title">経験豊富な講師陣</h3>
+            <div class="feature__img">
+              <img class="feature__img--main" src="./img/feature-img02.webp" alt="現経験豊富な講師陣から指導を受けながら学習に取り組む様子" width="121" height="135">
+              <img class="feature__img--ornament ornament02-1" src="./img/feature-ornament-02-1_sp.svg" alt="">
+              <img class="feature__img--ornament ornament02-2" src="./img/feature-ornament-02-2_sp.svg" alt="">
+              <img class="feature__img--ornament ornament02-pc" src="./img/feature-ornament-02-1_pc.svg" alt="">
+            </div>
+            <div class="feature__txtGroup">
+              <p class="feature__txtGroup--txt">講師陣全員が現役のエンジニアであり、200名以上の育成経験を持っています。実務でプログラム開発に携わった経験から、プログラミング知識だけではなく現場で必要なスキルやコツもレクチャーすることが可能です。初心者から上級者まで受講生のレベルに合わせた指導が可能であり、学習者がスキルアップするために必要なサポートを提供することができます。</p>
+            </div>
+          </li>
+          <li class="feature__item">
+            <h3 class="feature__title">メンターに<br class="spBr">よる転職サポート</h3>
+            <div class="feature__img">
+              <img class="feature__img--main" src="./img/feature-img03.webp" alt="メンターが受講者の相談を受けている様子" width="121" height="135">
+              <img class="feature__img--ornament ornament03" src="./img/feature-ornament-03.svg" alt="">
+            </div>
+            <div class="feature__txtGroup">
+              <p class="feature__txtGroup--txt">メンターがキャリア形成の相談から模擬面接まで一貫してサポートします。 受講者毎に一人担当メンターがつくのでコミュニケーションがとりやすく、受講者の希望を考慮した転職支援を受けることができます。</p>
+            </div>
+          </li>
+        </ul>
+        <picture>
+          <source media="(max-width: 767px)" srcset="./img/feature-point_sp.webp" width="375" height="113">
+          <img class="feature__point" src="./img/feature-point_pc.webp" alt="提携企業数5,000社以上。受講完了者のエンジニア就職率96.5％。学べる項目13種類。" width="840" height="250">
+        </picture>
+        <a class="cvBtn feature__cvBtn" href="#form">無料カウンセリング予約をする</a>
+      </section>
+      <section class="section study" id="study">
+        <h2 class="section__title study__title">学習内容</h2>
+        <p class="study__desc">エンジニアが必須で習得すべき言語はもちろん、業界のトレンドに合わせて最新の言語も学習することができます。学習後はWebサイトやWebアプリを制作するため、実践的なスキルも身につきます。</p>
+        <div class="study__wrapper study__language">
+          <h3 class="study__subTitle study__language--title">学習言語</h3>
+          <div class="language__list">
+            <img class="language__list--logo" src="./img/lang-html.svg" alt="HTMLのロゴ" width="86" height="69">
+            <img class="language__list--logo" src="./img/lang-css.svg" alt="CSSのロゴ" width="86" height="69">
+            <img class="language__list--logo" src="./img/lang-js.svg" alt="JavaScriptのロゴ" width="86" height="69">
+            <img class="language__list--logo" src="./img/lang-jQ.svg" alt="jQueryのロゴ" width="86" height="69">
+            <img class="language__list--logo" src="./img/lang-sass.svg" alt="Sassのロゴ" width="86" height="69">
+            <img class="language__list--logo" src="./img/lang-react.svg" alt="Reactのロゴ" width="86" height="69">
+            <img class="language__list--logo" src="./img/lang-ts.svg" alt="TypeScriptのロゴ" width="86" height="69">
+          </div>
+        </div>
+        <div class="study__wrapper study__others">
+          <h3 class="study__subTitle study__others--title">その他</h3>
+          <div class="others__list">
+            <img class="others__list--logo" src="./img/lang-fb.svg" alt="FireBaseのロゴ" width="86" height="69">
+            <img class="others__list--logo" src="./img/lang-git.svg" alt="Gitのロゴ" width="86" height="69">
+            <img class="others__list--logo" src="./img/lang-gulp.svg" alt="Gulpのロゴ" width="86" height="69">
+            <img class="others__list--logo" src="./img/lang-slack.svg" alt="Slackのロゴ" width="86" height="69">
+            <img class="others__list--logo" src="./img/lang-xd.svg" alt="AdobeXDのロゴ" width="86" height="69">
+            <img class="others__list--logo" src="./img/lang-cui.svg" alt="CUIツールのロゴ" width="86" height="69">
+          </div>
+        </div>
+        <div class="study__wrapper study__example">
+          <h3 class="study__subTitle study__example--title">制作物の例</h3>
+          <div class="swiper">
+            <ul class="example__list swiper-wrapper">
+              <li class="example__item swiper-slide">
+                <div class="example__logoGroup">
+                  <img class="example__logo" src="./img/lang-html.webp" alt="HTMLのロゴ" width="40" height="40">
+                  <img class="example__logo" src="./img/lang-css.webp" alt="CSSのロゴ" width="40" height="40">
+                  <img class="example__logo" src="./img/lang-js.webp" alt="JavaScriptのロゴ" width="40" height="40">
+                  <img class="example__logo" src="./img/lang-jQ.webp" alt="jQueryのロゴ" width="40" height="40">
+                  <img class="example__logo" src="./img/lang-sass.webp" alt="Sassのロゴ" width="40" height="40">
+                </div>
+                <img class="example__img" src="./img/example-chocolate.webp" alt="制作物の例として、チョコレートショップのWebサイト" width="270" height="155">
+              </li>
+              <li class="example__item swiper-slide">
+                <div class="example__logoGroup">
+                  <img class="example__logo" src="./img/lang-react.webp" alt="Reactのロゴ" width="40" height="40">
+                  <img class="example__logo" src="./img/lang-ts.webp" alt="TypeScriptのロゴ" width="40" height="40">
+                  <img class="example__logo" src="./img/lang-fb.webp" alt="FireBaseのロゴ" width="40" height="40">
+                </div>
+                <img class="example__img" src="./img/example-LL.webp" alt="制作物の例として、経営管理のWebアプリケーション" width="270" height="155">
+              </li>
+              <li class="example__item swiper-slide">
+                <div class="example__logoGroup">
+                  <img class="example__logo" src="./img/lang-react.webp" alt="Reactのロゴ" width="40" height="40">
+                  <img class="example__logo" src="./img/lang-ts.webp" alt="TypeScriptのロゴ" width="40" height="40">
+                  <img class="example__logo" src="./img/lang-fb.webp" alt="FireBaseのロゴ" width="40" height="40">
+                </div>
+                <img class="example__img" src="./img/example-ec.webp" alt="制作物の例として、コーヒーショップの通販サイト" width="270" height="155">
+              </li>
+            </ul>
+            <div class="swiper-parts">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          </div>
+      </section>
+      <section class="section support" id="support">
+        <h2 class="section__title support__title">サポート体制</h2>
+        <div class="support__wrapper support__study">
+          <h3 class="title__rectangle support__study--title">学習サポート</h3>
+          <ul class="support__study--list">
+            <li class="support__study--item">
+              <picture>
+                <source media="(max-width: 767px)" srcset="./img/support-learning01_sp.webp">
+                <img class="support__study--img" src="./img/support-learning01_pc.webp" alt="パソコンを使ってオンライン学習に取り組む受講者" width="149" height="109">
+              </picture>
+              <h4 class="support__study--subTitle">現役のエンジニアが<br class="pcBr">サポート</h4>
+              <p class="support__study--txt">WEBMASTERSの講師は、全員が現役のエンジニア！<br>実際の現場視点のコードレビューがもらえるので、より実践的な技術力を手に入れることができます。</p>
+            </li>
+            <li class="support__study--item">
+              <picture>
+                <source media="(max-width: 767px)" srcset="./img/support-learning02_sp.webp">
+                <img class="support__study--img" src="./img/support-learning02_pc.webp" alt="現役エンジニアからのコードレビューをもとに、パソコンでプログラミング学習に取り組む様子" width="149" height="109">
+              </picture>
+              <h4 class="support__study--subTitle">定期MTGで、<br class="pcBr">効率良く技術を身につける</h4>
+              <p class="support__study--txt">週に1回オンライン会議でコードレビューを行うので、自己完結の学習だけでなく、プロの視点からのフィードバックを得ることができます。<br>全部で20回以上行うため、技術の向上がしやすい環境です。</p>
+            </li>
+            <li class="support__study--item">
+              <picture>
+                <source media="(max-width: 767px)" srcset="./img/support-learning03_sp.webp">
+                <img class="support__study--img" src="./img/support-learning03_pc.webp" alt="個別指導のカリキュラムで、パソコンでプログラミング学習に取り組む様子" width="149" height="109">
+              </picture>
+              <h4 class="support__study--subTitle">完全個別指導で、<br class="pcBr">受講者に合わせた解説！</h4>
+              <p class="support__study--txt">完全個別指導のカリキュラムで、1人1人に合わせた解説を行います。<br>全くの未経験でも、プログラミングスキルを身につけることができます。</p>
+            </li>
+          </ul>
+        </div>
+        <div class="support__wrapper support__jobChange">
+          <h3 class="title__rectangle support__jobChange--title">転職サポート</h3>
+          <ul class="support__jobChange--list">
+            <li class="support__jobChange--item">
+              <picture>
+                <source media="(max-width: 767px)" srcset="./img/support-jobChange01_sp.webp">
+                <img class="support__jobChange--img" src="./img/support-jobChange01_pc.webp" alt="プロのメンターと一緒にキャリアの計画を立てている受講生" width="149" height="109">
+              </picture>
+              <h4 class="support__jobChange--subTitle">プロのメンター</h4>
+              <p class="support__jobChange--txt">ビデオ通話を使用して、専属メンターがキャリアの形成を支援します。今まで学習・経験したことをを踏まえて、受講完了後のキャリアについて一緒に計画します。</p>
+            </li>
+            <li class="support__jobChange--item">
+              <picture>
+                <source media="(max-width: 767px)" srcset="./img/support-jobChange02_sp.webp">
+                <img class="support__jobChange--img" src="./img/support-jobChange02_pc.webp" alt="転職サポートを受け、転職活動に取り組む受講者" width="149" height="109">
+              </picture>
+              <h4 class="support__jobChange--subTitle">定充実した<br class="spBr">転職支援体制</h4>
+              <p class="support__jobChange--txt">転職に必要な履歴書や職務経歴書の添削、面接の練習など、転職の準備から実践までサポートします。</p>
+            </li>
+            <li class="support__jobChange--item">
+              <picture>
+                <source media="(max-width: 767px)" srcset="./img/support-jobChange03_sp.webp">
+                <img class="support__jobChange--img" src="./img/support-jobChange03_pc.webp" alt="企業の紹介を受ける受講生の様子" width="149" height="109">
+              </picture>
+              <h4 class="support__jobChange--subTitle">企業のご紹介</h4>
+              <p class="support__jobChange--txt">学習内容や本人の希望をもとに5000社以上の提携先企業から条件にあった企業をご紹介します。</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section use" id="use">
+        <h2 class="section__title use__title">ご利用の流れ</h2>
+        <p class="use__desc">まずは無料カウンセリング予約！<br>カウンセリングでは受講方法についてのご説明や質疑応答を行います。</p>
+        <ul class="use__list">
+          <li class="use__item">
+            <div class="use__item--inner">
+              <picture class="use__picture">
+                <source media="(max-width: 767px)" srcset="./img/use-step01_sp.webp">
+                <img class="use__img" src="./img/use-step01_pc.svg" alt="日程調整を表すイラストアイコン" width="75" height="75">
+              </picture>
+              <div class="use__txtGroup">
+                <p class="use__txtGroup--title"><span class="use__txtGroup--stepIcon">STEP1</span>日程調整</p>
+                <p class="use__txtGroup--txt">希望の日程を選択します。</p>
+              </div>
+            </div>
+          </li>
+          <li class="use__item">
+            <div class="use__item--inner">
+              <picture class="use__picture">
+                <source media="(max-width: 767px)" srcset="./img/use-step02_sp.webp">
+                <img class="use__img" src="./img/use-step02_pc.svg" alt="ヒアリングを表すイラストアイコン" width="75" height="75">
+              </picture>
+              <div class="use__txtGroup">
+                <p class="use__txtGroup--title"><span class="use__txtGroup--stepIcon">STEP2</span>ヒアリング</p>
+                <p class="use__txtGroup--txt">学習したい内容や今後の目標について確認します。</p>
+              </div>
+            </div>
+          </li>
+          <li class="use__item">
+            <div class="use__item--inner">
+              <picture class="use__picture">
+                <source media="(max-width: 767px)" srcset="./img/use-step03_sp.webp">
+                <img class="use__img" src="./img/use-step03_pc.svg" alt="受講申し込みを表すイラストアイコン" width="75" height="75">
+              </picture>
+              <div class="use__txtGroup">
+                <p class="use__txtGroup--title"><span class="use__txtGroup--stepIcon">STEP3</span>受講申し込み</p>
+                <p class="use__txtGroup--txt">受講希望の場合、オンラインで受講申し込みを行います。</p>
+              </div>
+            </div>
+          </li>
+          <li class="use__item">
+            <div class="use__item--inner">
+              <picture class="use__picture">
+                <source media="(max-width: 767px)" srcset="./img/use-step04_sp.webp">
+                <img class="use__img" src="./img/use-step04_pc.svg" alt="受講開始を表すイラストアイコン" width="75" height="75">
+              </picture>
+              <div class="use__txtGroup">
+                <p class="use__txtGroup--title"><span class="use__txtGroup--stepIcon">STEP4</span>受講開始</p>
+                <p class="use__txtGroup--txt">今後のカリキュラム等について担当者から連絡します。</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <form class="form" id="form">
+          <h3 class="title__rectangle form__title">無料カウンセリング予約</h3>
+          <p class="form__desc">情報をご入力いただいたあと、<br class="spBr">公式LINEをご案内いたします。</p>
+          <div class="form__inner">
+            <div class="form__group">
+              <label class="form__label" for="name">お名前<span class="form__label--required">必須</span></label>
+              <div class="inputGroup">
+                <input class="inputGroup__input" type="text" id="name" name="name" placeholder="田中花子" required>
+                <span class="inputGroup__icon"></span>
+              </div>
+              <p class="form__error"></p>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="yomigana">よみがな<span class="form__label--required">必須</span></label>
+              <div class="inputGroup">
+                <input class="inputGroup__input" type="text" id="yomigana" name="yomigana" placeholder="たなかはなこ" required>
+                <span class="inputGroup__icon"></span>
+              </div>
+              <p class="form__error"></p>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">メールアドレス<span class="form__label--required">必須</span></label>
+              <div class="inputGroup">
+                <input class="inputGroup__input" type="email" id="email" name="email" placeholder="webmasters.co.jp" required>
+                <span class="inputGroup__icon"></span>
+              </div>
+              <p class="form__error"></p>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="tel">電話番号<span class="form__label--required">必須</span></label>
+              <div class="inputGroup">
+                <input class="inputGroup__input" type="tel" id="tel" name="tel" placeholder="00012345678" required>
+                <span class="inputGroup__icon"></span>
+              </div>
+              <p class="form__error"></p>
+            </div>
+          </div>
+          <label class="form__label checkbox__label" for="agreeCheck">
+            <input type="checkbox" id="agreeCheck" class="checkbox" required>
+            <a class="privacy__link" href="#body" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a><span class="privacy__link--icon"></span>に同意します。
+          </label>
+          <button type="submit" class="cvBtn form__btn" disabled>無料カウンセリング予約をする</button>
+          <p class="form__supplement">送信後、公式LINE追加のご案内画面へ<br class="spBr">遷移します。</p>
+        </form>
+      </section>
+      <section class="section pricePlan" id="pricePlan">
+        <h2 class="section__title price__title">料金プラン</h2>
+        <p class="pricePlan__desc">エンジニア未経験の方向けに学習から<br class="spBr">転職支援まで<br class="pcBr">一括でサポートするプランをご用意しています。</p>
+        <div class="pricePlan__inner">
+          <div class="pricePlan__content">
+            <h3 class="title__rectangle pricePlan__content--title">内容</h3>
+              <div class="pricePlan__wrap">
+                <h4 class="pricePlan__content--subTitle">学習サポート</h4>
+                <ul class="pricePlan__content--list">
+                  <li class="pricePlan__content--item">・各種言語の基礎学習と実践</li>
+                  <li class="pricePlan__content--item">・週1回のコードレビュー</li>
+                  <li class="pricePlan__content--item">・ポートフォリオ制作支援</li>
+                </ul>
+                <h4 class="pricePlan__content--subTitle">転職サポート</h4>
+                <ul class="pricePlan__content--list">
+                  <li class="pricePlan__content--item">・メンターによるキャリアアドバイス</li>
+                  <li class="pricePlan__content--item">・面接対策（履歴書添削、模擬面接）</li>
+                  <li class="pricePlan__content--item">・提携先企業紹介</li>
+                </ul>
+              </div>
+          </div>
+          <div class="pricePlan__price">
+            <h3 class="title__rectangle pricePlan__price--title">料金</h3>
+              <div class="pricePlan__wrap pricePlan__price--wrap">
+                <p class="pricePlan__price--txt"><span class="pricePlan__price--largeTxt">¥300,000</span>(税込)</p>
+                <p class="pricePlan__extension">
+                  <span class="pricePlan__extension--icon">継続</span>
+                  <span class="pricePlan__extension--largeTxt">¥300,000</span>
+                  <span class="pricePlan__extension--smallTxt">(税込)</span>
+                </p>
+                <p class="pricePlan__price--supplement">受講期間内に受講完了しなかった課題があり、<br>継続して受講を希望する場合</p>
+              </div>
+          </div>
+          <div class="pricePlan__period">
+            <h3 class="title__rectangle pricePlan__period--title">期間</h3>
+            <div class="pricePlan__wrap">
+              <h4 class="pricePlan__period--subTitle">学習サポート</h4>
+              <p class="pricePlan__period--txt">
+                <span>約</span>
+                <span class="pricePlan__period--largeTxt">6</span>
+                <span>ヶ月</span>
+              </p>
+              <h4 class="pricePlan__period--subTitle">転職サポート</h4>
+              <p class="pricePlan__period--txt">
+                <span>約</span>
+                <span class="pricePlan__period--largeTxt">6</span>
+                <span>ヶ月</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <a class="pageTop" href="#body">
+        <span  class="pageTop__shadow">
+          <span class="pageTop__hexagon">
+            <span class="pageTop__txt">トップへ戻る</span>
+          </span>
+        </span>
+      </a>
+      <a class="footer__logo" href="#body">
+        <img src="./img/logo-white.svg" alt="WEB MASTERSのサイトロゴ">
+      </a>
+      <div class="footer__txtGroup">
+        <div class="footer__listGroup">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <span class="footer__item--icon icon__arrow"></span>
+              <a class="footer__item--link" href="#body">開発系人材の求人例</a>
+            </li>
+            <li class="footer__item">
+              <span class="footer__item--icon icon__arrow"></span>
+              <a class="footer__item--link" href="#feature">特徴</a>
+            </li>
+            <li class="footer__item">
+              <span class="footer__item--icon icon__arrow"></span>
+              <a class="footer__item--link" href="#study">学習内容</a>
+            </li>
+            <li class="footer__item">
+              <span class="footer__item--icon icon__arrow"></span>
+              <a class="footer__item--link" href="#support">サポート体制</a>
+            </li>
+            <li class="footer__item">
+              <span class="footer__item--icon icon__arrow"></span>
+              <a class="footer__item--link" href="#use">ご利用の流れ</a>
+            </li>
+            <li class="footer__item">
+              <span class="footer__item--icon icon__arrow"></span>
+              <a class="footer__item--link" href="#pricePlan">料金プラン</a>
+            </li>
+            <li class="footer__item">
+              <span class="footer__item--icon icon__arrow"></span>
+              <a class="footer__item--link" href="#body">ブログ</a>
+            </li>
+          </ul>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <span class="footer__item--icon icon__externalLink"></span>
+              <a class="footer__item--link" href="#body">運営会社</a>
+            </li>
+            <li class="footer__item">
+              <span class="footer__item--icon icon__externalLink"></span>
+              <a class="footer__item--link" href="#body">プライバシーポリシー</a>
+            </li>
+            <li class="footer__item">
+              <span class="footer__item--icon icon__externalLink"></span>
+              <a class="footer__item--link" href="#body">特定商取引法に基づく表記</a>
+            </li>
+          </ul>
+        </div>
+        <a class="cvBtn footer__cvBtn" href="#form">無料カウンセリング予約をする</a>
+        <small class="footer__copylight">&copy; 2023 Y's inc.</small>
+      </div>
+    </footer>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

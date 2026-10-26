@@ -1,0 +1,367 @@
+// ファイルのインポート
+@use "variable" as v;
+@use "mixins" as m;
+@use "extends" as e;
+@use "function" as f;
+
+.use {
+    margin: 70px auto 0;
+    padding: 0 calc(15px / 375px * 100%);
+
+    @include m.mq('pc') {
+        margin: 120px auto 0;
+    }
+
+    &__desc {
+        text-align: center;
+        margin: 30px 28px 0;
+
+        @include m.mq('pc') {
+            font-size: f.rem(18);
+            margin: 40px auto 0;
+        }
+    }
+
+    &__list {
+        margin-top: 40px;
+
+
+        @include m.mq('pc') {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        @include m.mq('pc') {
+            display: flex;
+            align-items: center;
+
+        }
+
+        &:not(:last-child)::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 17px;
+            background-image: url(../img/use-arrow.svg);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 5px auto;
+
+            @include m.mq('pc') {
+                transform: rotate(-90deg)
+            }
+        }
+    }
+
+    &__item--inner {
+        background-color: v.$main-white;
+        border-radius: 15px;
+        padding: 10px calc(10px / 345px * 100%);
+        display: flex;
+        gap: 12px;
+
+        @include m.mq('pc') {
+            padding: 20px calc(10px / 180px * 100%);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            max-width: 180px;
+            height: 100%;
+        }
+    }
+
+    &__picture {
+        display: block;
+        width: calc(75px / 325px * 100%);
+        min-width: 75px;
+
+        @include m.mq('pc') {
+            width: 106px;
+            height: 106px;
+            background-color: v.$bg-lightGrey;
+            border-radius: 50%;
+        }
+    }
+
+    &__img {
+        height: 100%;
+    }
+
+    &__txtGroup {
+        &--title {
+            color: v.$darkGreen;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5.5px;
+
+            @include m.mq('pc') {
+                justify-content: center;
+            }
+        }
+
+        &--stepIcon {
+            display: inline-block;
+            font-size: f.rem(12);
+            text-align: center;
+            color: v.$main-white;
+            background-color: v.$darkGreen;
+            border-radius: 0 14px 14px 0;
+            width: 60px;
+            height: 20px;
+            margin-top: 2px;
+
+            @include m.mq('pc') {
+                font-size: f.rem(14);
+                width: 68px;
+                height: 23px;
+                position: absolute;
+                top: -5%;
+                left: 0;
+            }
+        }
+
+        &--txt {
+            margin-top: 4px;
+
+            @include m.mq('pc') {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .form {
+        background-color: #e3e3e3;
+        background-image: url(../img/study-bg_pc.png);
+        background-position: center -10%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0 calc(15px / 375px * 100%) 34px;
+        margin: 57px auto 0;
+        border-radius: 15px;
+        position: relative;
+
+        @include m.mq('pc') {
+            max-width: 1000px;
+            margin: 66px auto 0;
+        }
+
+        &__inner {
+            margin-top: 25px;
+
+            @include m.mq('pc') {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 17px 37px;
+                margin-top: 46px;
+            }
+        }
+
+        &__title {
+            width: 100%;
+            max-width: 281px;
+            transform: translateY(-50%);
+
+            @include m.mq('pc') {
+                max-width: 453px;
+            }
+        }
+
+        &__desc {
+            text-align: center;
+
+            @include m.mq('pc') {
+                font-size: f.rem(18);
+            }
+        }
+
+        &__label {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &--required {
+                font-size: f.rem(10);
+                padding: 0 4px;
+                color: v.$main-white;
+                background-color: v.$cvBtn-pink;
+                border-radius: 3px;
+                margin-top: 2px;
+            }
+        }
+
+        .inputGroup {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 7px;
+
+            @include m.mq('pc') {
+                margin-top: 0px;
+                gap: 10px;
+            }
+
+            &__input {
+                width: 100%;
+                background-color: v.$main-white;
+                border: 2px solid #717171;
+                border-radius: 5px;
+                padding: 10px;
+
+                @include m.mq('pc') {
+                    width: 318px;
+                }
+            }
+
+            &__icon {
+                display: block;
+                flex-shrink: 0;
+                width: 100%;
+                width: 27px;
+                height: 27px;
+                border-radius: 50%;
+                position: relative;
+
+                &::after {
+                    font-weight: 500;
+                    color: v.$main-white;
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                }
+            }
+
+            // 入力が正しい場合のスタイル
+            &.is-success {
+                .inputGroup__input {
+                    border: 2px solid v.$darkGreen;
+                }
+
+                .inputGroup__icon{
+                    background-color: v.$darkGreen;
+
+                    &::after {
+                        content: '✓';
+                    }
+                }
+            }
+
+            // 入力が誤っている場合のスタイル
+            &.is-error {
+                .inputGroup__input {
+                    border: 2px solid v.$cvBtn-pink;
+                }
+
+                .inputGroup__icon{
+                    background-color: v.$cvBtn-pink;
+
+                    &::after {
+                        content: '×';
+                    }
+                }
+            }
+
+            ::placeholder {
+                color: rgb(44, 44, 44, 0.3);
+            }
+        }
+
+        &__error {
+            font-size: f.rem(14);
+            color: v.$cvBtn-pink;
+            height: 20px;
+        }
+
+        .checkbox__label {
+            gap: 0;
+            font-weight: 400;
+            margin-top: 5px;
+
+            @include m.mq('pc') {
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .checkbox {
+                display: block;
+                width: 20px;
+                height: 20px;
+                border: 1px solid v.$title-black;
+                margin-right: 5px;
+                position: relative;
+                transition: .3s;
+
+                &:checked::after {
+                    content: "";
+                    width: 5px;
+                    height: 10px;
+                    border-right: 2px solid v.$title-black;
+                    border-bottom: 2px solid v.$title-black;
+                    position: absolute;
+                    left: 7px;
+                    top: 4px;
+                    transform: rotate(45deg);
+                }
+            }
+
+            .privacy__link {
+                color: v.$cvBtn-pink;
+                border-bottom: 1px solid v.$cvBtn-pink;
+
+                &--icon {
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    border-left: 1px solid v.$cvBtn-pink;
+                    border-bottom: 1px solid v.$cvBtn-pink;
+                    margin: 5px 4px 0;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        width: 11px;
+                        height: 11px;
+                        border: 1px solid #FC557C;
+                        position: absolute;
+                        top: -3px;
+                        left: 2px;
+                    }
+                }
+            }
+        }
+
+        &__btn {
+            margin-top: 15px;
+
+            @include m.mq('pc') {
+                margin-top: 20px;
+            }
+
+            &:disabled {
+                background: #b5b5b5;
+                cursor: not-allowed;
+                opacity: .6;
+            }
+        }
+
+        &__supplement {
+            font-size: f.rem(15);
+            text-align: center;
+            margin-top: 15px;
+
+            @include m.mq('pc') {
+                margin-top: 10px;
+            }
+        }
+
+    }
+}

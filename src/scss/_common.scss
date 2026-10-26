@@ -1,0 +1,125 @@
+// ファイルのインポート
+@use "variable" as v;
+@use "mixins" as m;
+@use "extends" as e;
+@use "function" as f;
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+    color: v.$txt-black;
+    background-color: v.$bg-lightGrey;
+    background-image: url(../img/bg-decoration.svg);
+    background-repeat: repeat;
+}
+
+picture {
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.cvBtn {
+    @extend %cvBtn-style;
+}
+
+.showBr {
+    display: block;
+}
+
+.hideBr {
+    display: none;
+}
+
+.section {
+    scroll-margin-top: 50px;
+
+    &__title {
+        font-size: f.rem(26);
+        font-weight: 500;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        @include m.mq('pc') {
+            font-size: f.rem(35);
+        }
+    
+        &::after {
+            content: '';
+            display: block;
+            width: 95px;
+            height: 11px;
+            background-image: url(../img/title-decoration.svg);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.title__rectangle {
+    font-size: f.rem(20);
+    font-weight: 500;
+    text-align: center;
+    width: 240px;
+    padding: 4px 0;
+    margin: 0 auto;
+    background-color: v.$main-white;
+    border: 2px solid v.$txt-black;
+    border-radius: 5px;
+    position: relative;
+
+    @include m.mq('pc') {
+        font-size: f.rem(28);
+        padding: 7px 0;
+        width: 453px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        aspect-ratio: 1;
+        width: 10px;
+        box-sizing: border-box;
+        background-color: v.$main-white;
+        rotate: 135deg;
+        translate: -50% 0;
+
+        @include m.mq('pc') {
+            bottom: -7px;
+            width: 10px;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        aspect-ratio: 1;
+        width: 16px;
+        box-sizing: border-box;
+        background-color: v.$main-white;
+        border: 2px solid;
+        border-color: v.$txt-black v.$txt-black transparent transparent;
+        rotate: 135deg;
+        translate: -50% 0;
+
+        @include m.mq('pc') {
+            bottom: -10px;
+            width: 20px;
+        }
+    }
+}

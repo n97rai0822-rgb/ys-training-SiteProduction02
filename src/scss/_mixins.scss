@@ -1,0 +1,26 @@
+// ファイルのインポート
+@use "variable" as v;
+//mapモジュール
+@use 'sass:map';
+
+
+//メディアクエリ
+$breakpoints: (
+    'pc': 'screen and (min-width: 768px)',
+    'sp': 'screen and (max-width: 767px)',
+);
+@mixin mq($breakpoint) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+// タイトル装飾用の緑のライン
+@mixin title-greenLine($width , $height) {
+    content: '';
+    display: block;
+    width: $width;
+    height: $height;
+    background-color: v.$lightGreen;
+    border-radius: 4px;
+}

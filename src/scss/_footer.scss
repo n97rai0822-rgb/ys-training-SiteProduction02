@@ -1,0 +1,211 @@
+// ファイルのインポート
+@use "variable" as v;
+@use "mixins" as m;
+@use "extends" as e;
+@use "function" as f;
+
+.footer {
+    background-color: v.$title-black;
+    padding: 0 calc(29px / 375px * 100%) 6px;
+    margin-top: 70px;
+
+    @include m.mq('pc') {
+        margin-top: 120px;
+        padding: 94.5px calc(140px / 1280px * 100%) 10px;
+        border-radius: 30px 30px 0 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pageTop {
+        background-color: v.$title-black;
+        @extend %flex-center;
+        margin: 0 auto;
+        width: 114.5px;
+        height: 127.54px;
+        clip-path: polygon(
+            round 15px,
+            50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0% 25%
+        );
+        transform: translateY(-20%);
+
+
+        @include m.mq('pc') {
+            background-color: transparent;
+            width: auto;
+            height: auto;
+            position: fixed;
+            bottom: 3%;
+            right: 3%;
+            z-index: 100;
+            transform: translateY(0);
+        }
+
+        &__shadow {
+            @include m.mq('pc') {
+                display: block;
+                box-shadow: 0 3px 6px #00000029;
+            }
+        }
+
+        &__hexagon {
+            background-color: #717171;
+            @extend %flex-center;
+            width: 86px;
+            height: 96.79px;
+            clip-path: polygon(
+                round 15px,
+                50% 0%,
+                100% 25%,
+                100% 75%,
+                50% 100%,
+                0% 75%,
+                0% 25%
+            );
+            transition: .3s;
+
+            &:hover{
+                background-color: v.$cvBtn-pink;
+            }
+        }
+
+        &__txt {
+            font-size: f.rem(12);
+            text-align: center;
+            color: v.$main-white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &::before {
+                content: '';
+                width: 15px;
+                height: 15px;
+                border: 0;
+                border-top: solid 3px v.$main-white;
+                border-right: solid 3px v.$main-white;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    &__logo {
+        display: block;
+        max-width: 237px;
+        margin: 0 auto;
+
+        @include m.mq('pc') {
+            max-width: 344px;
+            margin: 160px 0 0 0;
+        }
+    }
+
+    &__txtGroup {
+        @include m.mq('pc') {
+            max-width: 432px;
+        }
+    }
+
+    &__listGroup {
+        @include m.mq('pc') {
+            display: flex;
+            gap: 52px;
+        }
+    }
+
+    &__list {
+        margin-top: 31px;
+
+        &:nth-of-type(2) {
+            margin-top: 17px;
+        }
+
+        @include m.mq('pc') {
+            margin-top: 0;
+
+            &:nth-of-type(2) {
+                margin-top: 0px;
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 17px;
+
+        @include m.mq('pc') {
+            margin-top: 20px;
+        }
+
+        &:nth-of-type(1){
+            margin-top: 0;
+        }
+
+        &--icon {
+            width: 15px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: v.$main-white;
+            position: relative;
+        }
+
+        .icon__arrow::after {
+            content: '';
+            width: 5px;
+            aspect-ratio: 1;
+            border-top: 1px solid v.$title-black;
+            border-right: 1px solid v.$title-black;
+            position: absolute;
+            top: 5px;
+            left: 4px;
+            transform: rotate(45deg);
+        }
+
+
+        .icon__externalLink::after {
+            content: '';
+            background-image: url(../img/footer-externalLink.svg);
+            width: 8px;
+            aspect-ratio: 1;
+            position: absolute;
+            top: 25%;
+            left: 28%;
+        }
+
+
+        &--link {
+            font-weight: 500;
+            color: v.$main-white;
+        }
+    }
+
+    &__cvBtn {
+        margin: 50px auto 0;
+
+        @include m.mq('pc') {
+            margin: 73.5px auto 0 0;
+        }
+    }
+
+    &__copylight {
+        font-family: "Roboto", sans-serif;
+        font-size: f.rem(22);
+        font-weight: 700;
+        text-align: center;
+        color: #9B9B9B;
+        display: block;
+        margin-top: 54px;
+
+        @include m.mq('pc') {
+            text-align: end;
+            margin-top: 91px;
+        }
+    }
+}

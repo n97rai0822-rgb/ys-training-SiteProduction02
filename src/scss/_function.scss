@@ -1,0 +1,12 @@
+// ファイルのインポート
+@use "variable" as v;
+
+
+// フォントサイズのremを計算
+@function rem($px) {
+  @return calc($px / 16) * 1rem;
+}
+
+@function vw($px , $base) {
+  @return calc($px / $base * 100vw);
+}

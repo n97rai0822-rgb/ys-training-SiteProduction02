@@ -1,0 +1,223 @@
+// ファイルのインポート
+@use "variable" as v;
+@use "mixins" as m;
+@use "extends" as e;
+@use "function" as f;
+
+
+.study {
+    margin: 70px calc(15px / 375px * 100%) 0;
+
+    @include m.mq('pc') {
+        margin: 120px auto 0;
+        max-width: 1000px;
+    }
+
+    &__desc {
+        font-family: "Roboto", sans-serif;
+        margin-top: 30px;
+        text-align: center;
+        text-indent: 1em;
+
+        @include m.mq('pc') {
+            font-size: f.rem(18);
+            margin-top: 40px;
+        }
+    }
+
+    &__wrapper {
+        background-color: v.$main-white;
+        border-radius: 15px;
+        padding: 20px 0;
+        margin-top: 20px;
+
+        @include m.mq('pc') {
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        &:nth-of-type(1) {
+            margin-top: 40px;
+        }
+    }
+
+    &__subTitle {
+        font-size: f.rem(18);
+        font-weight: 700;
+        text-align: center;
+
+        @include m.mq('pc') {
+            font-size: f.rem(28);
+        }
+
+        &::after {
+            @include m.title-greenLine(36px , 5px);
+            margin: 8px auto 0;
+        }
+
+    }
+
+    &__language {
+
+        .language__list {
+            @extend %flex-center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+
+            @include m.mq('pc') {
+                margin-top: 0;
+            }
+
+            &--logo {
+                max-width: 86px;
+
+                @include m.mq('pc') {
+                    max-width: 110px;
+                }
+            }
+        }
+    }
+
+    &__others {
+
+        .others__list {
+            @extend %flex-center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+
+            @include m.mq('pc') {
+                margin-top: 0;
+            }
+
+            &--logo {
+                max-width: 86px;
+
+                @include m.mq('pc') {
+                    max-width: 110px;
+                }
+            }
+        }
+    }
+
+    &__example {
+
+        .example__list {
+            @include m.mq('pc') {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                margin-top: 20px;
+            }
+        }
+
+        .example__item {
+            @include m.mq('pc') {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                max-width: 305px;
+            }
+        }
+
+        .example__logoGroup {
+            @extend %flex-center;
+
+            .example__logo {
+                max-width: 40px;
+            }
+        }
+
+        .example__img {
+            margin-top: 10px;
+
+            @include m.mq('pc') {
+                margin-top: 0;
+            }
+        }
+
+        .swiper {
+            overflow: hidden;
+            margin-top: 15px;
+            width:100vw;
+            margin-left:50%;
+            transform:translateX(-50%);
+
+            @include m.mq('pc') {
+                width:100%;
+                margin: 0;
+                transform:translateX(0);
+            }
+
+            &-slide {
+                height: auto;
+            }
+
+
+            &-parts {
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+                @extend %flex-center;
+                gap: 20px;
+
+                @include m.mq('pc') {
+                    display: none;
+                }
+
+                .swiper-button-prev,
+                .swiper-button-next{
+                    position: static;
+                    top: auto;
+                    left: auto;
+                    right: auto;
+                    margin: 0;
+                    width: 37px;
+                    height: 37px;
+                    background-color: v.$title-black;
+                    border-radius: 50%;
+
+                    .swiper-navigation-icon {
+                        display: none;
+                    }
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 8px;
+                        height: 8px;
+                        border-top: 2px solid v.$main-white;
+                        border-right: 2px solid v.$main-white;
+                    }
+                }
+
+                .swiper-button-prev::after {
+                    transform: rotate(-135deg);
+                }
+
+                .swiper-button-next::after {
+                    transform: rotate(45deg);
+                }
+
+                .swiper-pagination {
+                    position: static;
+                    width: auto;
+                    @extend %flex-center;
+
+                    &-bullet {
+                        width: 9px;
+                        height: 9px;
+                        --swiper-pagination-bullet-horizontal-gap: 10px;
+
+                        &-active {
+                            background-color: v.$title-black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

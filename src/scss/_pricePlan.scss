@@ -1,0 +1,210 @@
+// ファイルのインポート
+@use "variable" as v;
+@use "mixins" as m;
+@use "extends" as e;
+@use "function" as f;
+
+.pricePlan {
+    margin: 70px auto 0;
+    padding: 0 calc(15px / 375px * 100%);
+
+    @include m.mq('pc') {
+        margin: 120px auto 0;
+    }
+
+    &__desc {
+        text-align: center;
+        margin: 30px 20px 0;
+
+        @include m.mq('pc') {
+            font-size: f.rem(18);
+            margin: 30px auto 0;
+        }
+    }
+
+    &__inner {
+        margin: 0 auto;
+
+        @include m.mq('pc') {
+            max-width: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: calc(27.5px / 1000px * 100%);
+            margin: 30px auto 0;
+        }
+    }
+
+    &__wrap {
+        background-color: v.$main-white;
+        border-radius: 15px;
+        padding: 36px calc(15px / 375px * 100%) 15px;
+
+        @include m.mq('pc') {
+            background-color: transparent;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+    }
+
+    &__content,
+    &__price,
+    &__period {
+        margin-top: 40px;
+
+        @include m.mq('pc') {
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        &--title {
+            position: relative;
+            z-index: 10;
+            transform: translateY(50%);
+
+            @include m.mq('pc') {
+                font-size: f.rem(18);
+                padding: 7px 0;
+                max-width: 224px;
+                transform: translateY(0);
+            }
+        }
+
+
+        &--subTitle {
+            font-size: f.rem(14);
+            font-weight: 500;
+            text-align: center;
+            color: v.$main-white;
+            background-color: v.$darkGreen;
+            padding: 1px 0;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+
+    &__content {
+        margin-top: 50px;
+
+        @include m.mq('pc') {
+            margin-top: 0;
+        }
+
+        &--subTitle:nth-of-type(2) {
+            margin-top: 10px;
+        }
+
+        &--list {
+            background-color: v.$bg-lightGrey;
+            padding: 7.5px 0 7.5px 38.5px;
+            border-radius: 0 0 10px 10px;
+
+            @include m.mq('pc') {
+                background-color: v.$main-white;
+            }
+        }
+
+        &--item {
+            font-size: f.rem(14);
+            font-weight: 500;
+
+        }
+    }
+
+    &__price {
+
+        &--wrap {
+            @include m.mq('pc') {
+                background-color: v.$main-white;
+                padding: 30px  24.5px;
+                flex: 1;
+            }
+        }
+
+        &--txt {
+            font-size: f.rem(14);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        &--largeTxt {
+            font-size: f.rem(40);
+            font-weight: 900;
+            line-height: 1;
+            color: v.$cvBtn-pink;
+            margin-right: 3px;
+        }
+
+        &--supplement {
+            font-size: f.rem(12);
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+
+            &::before{
+                content: '※';
+            }
+        }
+    }
+
+    &__extension {
+        font-size: f.rem(12);
+        font-weight: 500;
+        text-align: center;
+        @extend %flex-center;
+        gap: 5px;
+        margin-top: 5px;
+
+        &--icon {
+            font-size: f.rem(17);
+            font-weight: 700;
+            line-height: 1;
+            color: v.$main-white;
+            background-color: v.$cvBtn-pink;
+            padding: 3px 9.8px;
+            border-radius: 3px;
+        }
+
+        &--largeTxt {
+            font-size: f.rem(29);
+            font-weight: 900;
+            color: v.$cvBtn-pink;
+        }
+
+        &--smallTxt {
+            transform: translateY(25%);
+        }
+    }
+
+
+    &__period {
+
+        &--subTitle:nth-of-type(2){
+            margin-top: 10px;
+        }
+
+        &--txt {
+            font-size: f.rem(22);
+            font-weight: 500;
+            text-align: center;
+            background-color: v.$bg-lightGrey;
+            border-radius: 0 0 10px 10px;
+            padding: 4.5px 0;
+            @extend %flex-center;
+            width: 100%;
+
+            @include m.mq('pc') {
+                background-color: v.$main-white;
+            }
+        }
+
+        &--largeTxt {
+            font-size: f.rem(46);
+            font-weight: 700;
+            margin: 0 5px;
+            transform: translateY(-10%);
+        }
+    }
+}
